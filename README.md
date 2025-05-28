@@ -1,9 +1,8 @@
-사용법
-git 설치 및 다운로드
+빅데이터처리 Spark 예제
 
 ```
 sudo apt install git
-git clone https://github.com/shjeon0708/bigdata.git
+git clone https://github.com/shjeon0708/spark.git
 ```
 
 실행 전 수업시간에 진행했던 배포파일은 모두 kubectl delete -f로 제거 후 진행하세요.
