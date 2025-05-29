@@ -40,7 +40,6 @@ kubectl apply -f zeppelin-0.11.2/k8s/zeppelin-server.yaml
 MySQL 실행
 ```
 kubectl apply -f spark/db/mysql.yaml
-
 ```
 
 MySQL 실습 테이블 생성
