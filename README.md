@@ -5,8 +5,25 @@ sudo apt install git
 git clone https://github.com/shjeon0708/spark.git
 ```
 
-실행 전 수업시간에 진행했던 배포파일은 모두 kubectl delete -f로 제거 후 진행하세요.
+Spark 공식 바이너리 다운 및 docker 이미지화
 
+```
+eval $(minikube docker-env)
+https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz
+tar -xzvf spark-3.5.5-bin-hadoop3.tgz
+spark-3.5.5-bin-hadoop3/bin/docker-image-tool.sh -m build
+```
+Zeppelin 소스 코드 내려받기
+```
+wget https://github.com/apache/zeppelin/archive/refs/tags/v0.11.2.tar.gz
+tar zxvf v0.11.2.tar.gz
+```
+zeppelin은 3개 이미지가 준비되어야 함.
+zeppelin-distribution docker 이미지화
+```
+cd zeppelin-0.11.2
+docker build -t zeppelin-distribution:latest -f ./Dockerfile .
+```
 
 strimzi.io ClusterRoles 및 ClusterRoleBindings 배포
 ```
