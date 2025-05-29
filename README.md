@@ -24,16 +24,17 @@ docker pull shjeon0617/zeppelin-server:0.11.2
 docker pull shjeon0617/zeppelin-interpreter:latest
 ```
 
-cp shjeon0617
+zeppelin 서버 yaml파일 수정
+사용되는 docker 이미지 수정 필요함.
+위 이미지를 사용했다면 github그대로 사용가능.
+
 ```
-wget https://github.com/apache/zeppelin/archive/refs/tags/v0.11.2.tar.gz
-tar zxvf v0.11.2.tar.gz
+cp spark/zeppelin/zeppelin-server.yaml zeppelin-0.11.2/k8s/zeppelin-server.yaml
+
 ```
-zeppelin은 3개 이미지가 준비되어야 함.
-zeppelin-distribution docker 이미지화
+zeppelin 서버 실행
 ```
-cd zeppelin-0.11.2
-docker build -t zeppelin-distribution:latest -f ./Dockerfile .
+kubectl apply -f zeppelin-0.11.2/k8s/zeppelin-server.yaml
 ```
 
 strimzi.io ClusterRoles 및 ClusterRoleBindings 배포
