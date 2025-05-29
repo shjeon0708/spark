@@ -5,15 +5,26 @@ sudo apt install git
 git clone https://github.com/shjeon0708/spark.git
 ```
 
-Spark 공식 바이너리 다운 및 docker 이미지화
+실습에 필요한 이미지 4가지
+Apache Spark
+Zeppelin-distribution
+Zeppelin-server
+Zeppelin-interpreter
 
+이미지 용량이 크기때문에 시간이 오래 걸림.
 ```
 eval $(minikube docker-env)
-https://dlcdn.apache.org/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz
-tar -xzvf spark-3.5.5-bin-hadoop3.tgz
-spark-3.5.5-bin-hadoop3/bin/docker-image-tool.sh -m build
+
+docker pull shjeon0617/spark:3.5.5
+
+docker pull shjeon0617/zeppelin-distribution:latest
+
+docker pull shjeon0617/zeppelin-server:0.11.2
+
+docker pull shjeon0617/zeppelin-interpreter:latest
 ```
-Zeppelin 소스 코드 내려받기
+
+cp shjeon0617
 ```
 wget https://github.com/apache/zeppelin/archive/refs/tags/v0.11.2.tar.gz
 tar zxvf v0.11.2.tar.gz
